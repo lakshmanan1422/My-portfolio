@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600&display=swap');
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   WEBGL BACKGROUND
+========================================= */
+
+#webgl {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-family: "Anton";
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #0066ff;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0066ff;
+}
+
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+section {
+    min-height: 100vh;
+
+    padding: 150px 8%;
+
+    position: relative;
+}
+
+.label {
+    color: #0066ff;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-family: "Anton";
+
+    font-size: clamp(60px, 10vw, 160px);
+
+    line-height: 0.85;
+
+    letter-spacing: -2px;
+}
+
+h2 span {
+    color: #0066ff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 0;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.eyebrow {
+    letter-spacing: 7px;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+
+    color: #ccc;
+}
+
+.hero h1 {
+    font-family: "Anton";
+
+    font-size: clamp(100px, 20vw, 330px);
+
+    line-height: 0.75;
+
+    color: #0066ff;
+
+    letter-spacing: -5px;
+
+    text-shadow:
+        0 0 20px rgba(0, 102, 255, 0.3),
+        0 0 60px rgba(0, 102, 255, 0.15);
+}
+
+.hero-bottom {
+    margin-top: 60px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    text-align: left;
+}
+
+.hero-bottom p {
+    line-height: 1.7;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+}
+
+.hero-bottom span {
+    align-self: end;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    color: #0066ff;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(0, 50, 120, 0.18),
+            transparent 50%
+        );
+}
+
+.description {
+    max-width: 700px;
+
+    margin-top: 60px;
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+    color: #aaa;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-section {
+    background: rgba(0, 10, 25, 0.72);
+}
+
+.skills-grid {
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 2px;
+
+    border: 1px solid #222;
+}
+
+.skill {
+    padding: 60px 30px;
+
+    border: 1px solid #222;
+
+    font-size: 25px;
+
+    transition: 0.5s;
+
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.skill:hover {
+    background: #0066ff;
+
+    transform: scale(1.03);
+
+    z-index: 2;
+
+    box-shadow:
+        0 0 30px rgba(0, 102, 255, 0.35);
+}
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects-section {
+    background: #02050a;
+}
+
+.project-list {
+    margin-top: 100px;
+}
+
+.project {
+    display: grid;
+
+    grid-template-columns: 80px 1fr 50px;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding: 50px 20px;
+
+    border-top: 1px solid #222;
+
+    transition: 0.5s;
+}
+
+.project:last-child {
+    border-bottom: 1px solid #222;
+}
+
+.project:hover {
+    background: #001a33;
+
+    padding-left: 40px;
+
+    box-shadow:
+        inset 5px 0 0 #0066ff;
+}
+
+.project > span {
+    color: #0066ff;
+
+    font-size: 18px;
+}
+
+.project h3 {
+    font-family: "Anton";
+
+    font-size: 45px;
+
+    letter-spacing: 1px;
+}
+
+.project p {
+    color: #999;
+
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    line-height: 1.5;
+}
+
+.project strong {
+    color: #0066ff;
+
+    font-size: 30px;
+
+    transition: 0.3s;
+}
+
+.project:hover strong {
+    transform: translateX(8px);
+}
+
+
+/* =========================================
+   JOURNEY / TIMELINE
+========================================= */
+
+.timeline {
+    margin-top: 100px;
+
+    border-left: 2px solid #0066ff;
+
+    padding-left: 50px;
+
+    position: relative;
+}
+
+.timeline div {
+    margin-bottom: 70px;
+
+    position: relative;
+}
+
+.timeline div::before {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    background: #0066ff;
+
+    border-radius: 50%;
+
+    left: -57px;
+    top: 10px;
+
+    box-shadow:
+        0 0 15px rgba(0, 102, 255, 0.8);
+}
+
+.timeline span {
+    font-family: "Anton";
+
+    font-size: 60px;
+
+    color: #0066ff;
+}
+
+.timeline p {
+    font-size: 20px;
+
+    color: #aaa;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #001a33 0%,
+            #000 65%
+        );
+}
+
+.contact > a {
+    margin-top: 70px;
+
+    color: white;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.contact > a:hover {
+    color: #0066ff;
+}
+
+.socials {
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 50px;
+}
+
+.socials a {
+    color: #0066ff;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #fff;
+
+    text-shadow:
+        0 0 15px rgba(0, 102, 255, 0.8);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    background: #000;
+}
+
+
+/* =========================================
+   BLUE GLOW EFFECTS
+========================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #0066ff;
+
+    opacity: 0.08;
+
+    filter: blur(150px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+}
+
+.about::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: 5%;
+    top: 20%;
+
+    background: #0066ff;
+
+    opacity: 0.05;
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.hero-photo {
+    position: absolute;
+
+    right: 8%;
+
+    bottom: 0;
+
+    width: 350px;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.hero-photo img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter:
+        contrast(1.1)
+        brightness(0.85);
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 70%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black 70%,
+            transparent 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 30px rgba(0, 102, 255, 0.35)
+        )
+        contrast(1.1)
+        brightness(0.85);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button,
+.btn {
+    border: 1px solid #0066ff;
+
+    background: transparent;
+
+    color: #fff;
+
+    padding: 15px 30px;
+
+    font-family: "Oswald";
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+    background: #0066ff;
+
+    color: #fff;
+
+    box-shadow:
+        0 0 30px rgba(0, 102, 255, 0.35);
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+    background: #0066ff;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0066ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3385ff;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    section {
+        padding: 120px 25px;
+    }
+
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero h1 {
+        font-size: 24vw;
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding: 0 25px;
+    }
+
+    .hero-bottom p {
+        font-size: 11px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill {
+        padding: 40px 25px;
+    }
+
+    .project {
+        grid-template-columns: 40px 1fr;
+
+        gap: 15px;
+
+        padding: 40px 10px;
+    }
+
+    .project:hover {
+        padding-left: 20px;
+    }
+
+    .project strong {
+        display: none;
+    }
+
+    .project h3 {
+        font-size: 30px;
+    }
+
+    .project p {
+        font-size: 14px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline div::before {
+        left: -37px;
+    }
+
+    .timeline span {
+        font-size: 45px;
+    }
+
+    .timeline p {
+        font-size: 16px;
+    }
+
+    .hero-photo {
+        width: 240px;
+
+        right: 50%;
+
+        transform: translateX(50%);
+
+        opacity: 0.8;
+    }
+
+    .contact > h2 {
+        font-size: 70px;
+    }
+
+    .socials {
+        gap: 20px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+}
